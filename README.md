@@ -8,7 +8,7 @@ As part of this project, a variety of tools were developed to help automate impo
 ### EXIF Stress Tester (`exif_spam.py`)
 One tool developed during this project is the EXIF Stress Tester. The tool takes an input JPEG image and adds a variety of pre-defined EXIF tags (36 in total, including timestamps of creation and modification, the image author, copyright information and camera specifications, among others). This tool was made as it was necessary to create images in bulk with different EXIF configurations. For example: if an image had a geotag containing a GPS co-ordinate that does not exist – in testing, the value `(4294967295, 4294967295, 4294967295)` was used – the website could respond in a variety of ways: ignoring the tag, removing it, or attempting to display it. It was also suggested that some tags may be left alone due to legal reasons, such as the copyright tag.
 
-> The following EXIF tags were set to equal themselves (e.g. the image_description tag would be set to the value image_description):
+> The following EXIF tags were set to equal themselves (e.g. the `image_description` tag would be set to the value `image_description`):
 > ```
 > “processing_software”, “document_name”, “image_description”, “make”, “model”, “page_name”, “software”, “artist”, “host_computer”, “target_printer”, “copyright”, “sem_info”, “spectral_sensitivity”, “security_classification”, “image_unique_id”, “owner_name”, “serial_number”, “make_lens”, “model_lens”, “serial_number_lens”, “unique_camera_model”, “localized_camera_model”, “reel_name”, “camera_label”, “comment”, “device_manufacturer”, “device_model”
 
@@ -42,10 +42,14 @@ The final tools that were created for this project were for the second part of t
 gallery-dl is a Python module distributed via the Python Package Index (PyPI). It is a popular command line tool that allows a user to automatically scrape images from several websites, including Flickr, Instagram, Twitter, and Tumblr (mikf, 2021). This allowed the images used in the experiments to be downloaded quickly and easily from most of the websites tested on.
 
 ### Discrete Cosine Transform (`OutGuess`)
+> 💡 OutGuess build available at [**resurrecting-open-source-projects/outguess**](https://github.com/resurrecting-open-source-projects/outguess)
+
 OutGuess is a steganography tool originally created by Niels Provos of the University of Michigan in 1999. It uses the Discrete Cosine Transform method to embed a steganographic message in the quantisation table of a JPEG image. OutGuess has since been maintained by the open-source community on GitHub (Provos, et al., 2018).
 
 ### Pattern Creator (`pattern.py`, a Python version of Metasploit’s `pattern_create.rb`)
-`pattern_create.rb` is a utility included with the Metasploit Framework; this is a series of tools that allow a user to exploit vulnerabilities on remote systems for security research. (Rapid7, 2021) The `pattern_create` tool specifically allows a user to create a non-repeating pattern of a specified length. In exploit development, this is commonly used for buffer overflows to see where an attacker can write to in memory (Offensive Security, n.d.). For this project, it was used to create a deterministic message of a specified length to allow for easy integrity checking after processing – simply passing the resulting string to the program is enough to check if it is fully intact. pattern.py is a Python version of this program created by a GitHub user `ickerwx` (ickerwx, 2019). 
+> > 💡 Original `pattern_create.rb` available at [**ickerwx/pattern**](https://github.com/ickerwx/pattern)
+
+`pattern_create.rb` is a utility included with the Metasploit Framework; this is a series of tools that allow a user to exploit vulnerabilities on remote systems for security research. (Rapid7, 2021) The `pattern_create` tool specifically allows a user to create a non-repeating pattern of a specified length. In exploit development, this is commonly used for buffer overflows to see where an attacker can write to in memory (Offensive Security, n.d.). For this project, it was used to create a deterministic message of a specified length to allow for easy integrity checking after processing – simply passing the resulting string to the program is enough to check if it is fully intact. pattern.py is a Python version of this program created by a GitHub user `ickerwx` (ickerwx, 2019).
 
 ### AutoHotkey
 AutoHotkey is a popular Windows scripting language used to automate desktop tasks (AutoHotkey, 2021). For this project, it was used to scrape images from websites that did not work correctly via `gallery-dl`, such as Facebook – the script would simply right-click each image on a page and save it to the desktop for later analysis.
