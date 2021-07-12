@@ -39,17 +39,21 @@ The final tools that were created for this project were for the second part of t
 
 ## Third-Party Tools
 ### Gallery Downloader (`gallery-dl`)
+> 💡 `gallery-dl` is available via `pip install gallery-dl` or [**PyPI**](https://pypi.org/project/gallery-dl/)
+
 gallery-dl is a Python module distributed via the Python Package Index (PyPI). It is a popular command line tool that allows a user to automatically scrape images from several websites, including Flickr, Instagram, Twitter, and Tumblr (mikf, 2021). This allowed the images used in the experiments to be downloaded quickly and easily from most of the websites tested on.
 
 ### Discrete Cosine Transform (`OutGuess`)
-> 💡 OutGuess build available at [**resurrecting-open-source-projects/outguess**](https://github.com/resurrecting-open-source-projects/outguess)
+> 💡 The community OutGuess build is available at [**resurrecting-open-source-projects/outguess**](https://github.com/resurrecting-open-source-projects/outguess)
 
 OutGuess is a steganography tool originally created by Niels Provos of the University of Michigan in 1999. It uses the Discrete Cosine Transform method to embed a steganographic message in the quantisation table of a JPEG image. OutGuess has since been maintained by the open-source community on GitHub (Provos, et al., 2018).
 
 ### Pattern Creator (`pattern.py`, a Python version of Metasploit’s `pattern_create.rb`)
-> > 💡 Original `pattern_create.rb` available at [**ickerwx/pattern**](https://github.com/ickerwx/pattern)
+> 💡 `pattern.py` is available at [**ickerwx/pattern**](https://github.com/ickerwx/pattern)
 
 `pattern_create.rb` is a utility included with the Metasploit Framework; this is a series of tools that allow a user to exploit vulnerabilities on remote systems for security research. (Rapid7, 2021) The `pattern_create` tool specifically allows a user to create a non-repeating pattern of a specified length. In exploit development, this is commonly used for buffer overflows to see where an attacker can write to in memory (Offensive Security, n.d.). For this project, it was used to create a deterministic message of a specified length to allow for easy integrity checking after processing – simply passing the resulting string to the program is enough to check if it is fully intact. pattern.py is a Python version of this program created by a GitHub user `ickerwx` (ickerwx, 2019).
 
 ### AutoHotkey
+> 💡 AutoHotkey is available at [**autohotkey.com**](https://autohotkey.com)
+
 AutoHotkey is a popular Windows scripting language used to automate desktop tasks (AutoHotkey, 2021). For this project, it was used to scrape images from websites that did not work correctly via `gallery-dl`, such as Facebook – the script would simply right-click each image on a page and save it to the desktop for later analysis.
